@@ -20,4 +20,9 @@ texture = ExtResource("2_0e48y")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" unique_id=691837584]
 shape = SubResource("RectangleShape2D_tg3de")
 
+[node name="Timer" type="Timer" parent="." unique_id=1288519804]
+wait_time = 1.5
+
 [connection signal="mouse_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Sprite2D/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
