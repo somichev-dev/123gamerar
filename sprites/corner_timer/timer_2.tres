@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://c62kqllf0sirx"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fi1w3"]
+load_path = "res://.godot/imported/timer_frames.png-6e46a9914a53363ac348755e174fa1ee.ctex"
+
+[resource]
+atlas = SubResource("CompressedTexture2D_fi1w3")
+region = Rect2(167, 1, 81, 72)

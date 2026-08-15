@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ctf803q3crk38"]
+
+[node name="CornerTimer" type="TextureRect" unique_id=72580181]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=571459962]
