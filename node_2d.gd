@@ -1,7 +1,6 @@
 extends Node2D
 
 func _ready() -> void:
-	print(Achievements.achievements)
 	Achievements.unlock("start_game") 
 	print(Achievements.achievements)
 
