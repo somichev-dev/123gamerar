@@ -8,6 +8,7 @@ var _completion_amount: float = 0 :
 	set(value):
 		_completion_amount = min(value, 1.1)
 		_completion_amount = max(_completion_amount, 0)
+
 var modulation_colors = [Color("555555"), Color("FFFFFF")]
 @export var rock_positions = [Vector2(199.0, 5.0), Vector2(199.0, 54.0)]
 var sparks_scene = preload("res://sparks.tscn")
