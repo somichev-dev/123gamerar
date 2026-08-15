@@ -1,5 +1,9 @@
 extends Node2D
 
+func _ready() -> void:
+	Achievements.unlock("start_game") 
+	print(Achievements.achievements)
+
 func _process(delta: float) -> void:
 	$Sprite2D.rotation_degrees += 360*delta if mouse else -360*delta
 
