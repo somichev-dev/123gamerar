@@ -10,7 +10,7 @@ size = Vector2(130, 128)
 script = ExtResource("1_wtcfe")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1482144707]
-position = Vector2(567, 337)
+position = Vector2(161, 85)
 texture = ExtResource("2_0e48y")
 
 [node name="Node2D" type="Node2D" parent="Sprite2D" unique_id=181117964]
