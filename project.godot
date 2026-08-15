@@ -11,12 +11,9 @@ config_version=5
 [application]
 
 config/name="123gamerar"
+run/main_scene="uid://dok60415fti6r"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://textures/icon.svg"
-
-[autoload]
-
-Lives="*uid://dlwoyt2revmrv"
 
 [autoload]
 

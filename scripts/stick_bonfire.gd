@@ -16,14 +16,11 @@ func _process(delta: float) -> void:
 	$Control/TextureRectLeft.visible = !_stick_position
 	$Control/TextureRectRight.visible = _stick_position
 
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("key_left") and !_stick_position:
 		_completion_amount += key_press_rate
 		_stick_position = !_stick_position
-		return
 	if event.is_action_pressed("key_right") and _stick_position:
 		_completion_amount += key_press_rate
 		_stick_position = !_stick_position
-		return
-	
-		
