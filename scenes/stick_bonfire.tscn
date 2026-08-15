@@ -1,18 +1,19 @@
 [gd_scene format=3 uid="uid://c714ukjmulff3"]
 
 [ext_resource type="Script" uid="uid://cbg7y7ry5j3n8" path="res://scripts/stick_bonfire.gd" id="1_lg7o3"]
-[ext_resource type="Texture2D" uid="uid://bqq1it0avnyab" path="res://sprites/key_hint_a.tres" id="2_kfwu0"]
-[ext_resource type="Texture2D" uid="uid://pfy0cxt7pnb8" path="res://sprites/key_hint_d.tres" id="3_dd6e0"]
+[ext_resource type="Texture2D" uid="uid://bqq1it0avnyab" path="res://sprites/keys/key_hint_a.tres" id="2_kfwu0"]
+[ext_resource type="Texture2D" uid="uid://pfy0cxt7pnb8" path="res://sprites/keys/key_hint_d.tres" id="3_dd6e0"]
+[ext_resource type="PackedScene" uid="uid://ctf803q3crk38" path="res://scenes/corner_timer.tscn" id="4_dd6e0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vwr0o"]
 font_color = Color(0.69803923, 0.05882353, 0.05882353, 1)
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kfwu0"]
-
 [node name="StickBonfire" type="Node2D" unique_id=54306289]
+oversampling_with_scale = 1
 script = ExtResource("1_lg7o3")
 
 [node name="Control" type="Control" parent="." unique_id=1767759794]
+oversampling_with_scale = 1
 custom_minimum_size = Vector2(320, 180)
 layout_mode = 3
 anchors_preset = 15
@@ -52,12 +53,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextureRectLeft" type="TextureRect" parent="Control" unique_id=2001743504]
+oversampling_with_scale = 1
+texture_filter = 3
 layout_mode = 0
-offset_left = 117.0
-offset_top = 132.0
-offset_right = 157.0
-offset_bottom = 172.0
+offset_left = 109.0
+offset_top = 130.0
+offset_right = 142.0
+offset_bottom = 164.0
 texture = ExtResource("2_kfwu0")
+stretch_mode = 2
 
 [node name="TintRect" type="ColorRect" parent="Control/TextureRectLeft" unique_id=420919779]
 visible = false
@@ -67,12 +71,14 @@ offset_bottom = 40.0
 color = Color(0.20511726, 0.2051175, 0.20511737, 0.6745098)
 
 [node name="TextureRectRight" type="TextureRect" parent="Control" unique_id=1352052901]
+oversampling_with_scale = 1
 layout_mode = 0
-offset_left = 170.0
-offset_top = 132.0
-offset_right = 210.0
-offset_bottom = 172.0
+offset_left = 169.0
+offset_top = 130.0
+offset_right = 202.0
+offset_bottom = 164.0
 texture = ExtResource("3_dd6e0")
+stretch_mode = 2
 
 [node name="TintRect" type="ColorRect" parent="Control/TextureRectRight" unique_id=825364451]
 visible = false
@@ -81,18 +87,10 @@ offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0.20511726, 0.2051175, 0.20511737, 0.6745098)
 
-[node name="TimerTexture" type="TextureRect" parent="Control" unique_id=619906892]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 128.0
-offset_right = 50.0
-offset_bottom = 168.0
-texture = SubResource("PlaceholderTexture2D_kfwu0")
-
-[node name="Label" type="Label" parent="Control/TimerTexture" unique_id=1078702178]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-text = "5"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="CornerTimer" parent="Control" unique_id=72580181 instance=ExtResource("4_dd6e0")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 2.0
+offset_top = 106.0
+offset_right = -237.0
+offset_bottom = -2.0

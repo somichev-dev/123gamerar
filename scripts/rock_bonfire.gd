@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 	
 	## win/transition block
 	_current_timer_amount -= delta
-	$TimerTexture/Label.text = str(int(_current_timer_amount))
+	%CornerTimer.change_anim(int(_current_timer_amount)+1)
 	if _current_timer_amount <= 0:
 		var has_won = _completion_amount >= win_threshold
 		GamestateStorage.passed_levels += int(has_won)
