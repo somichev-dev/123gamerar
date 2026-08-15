@@ -25,8 +25,3 @@ func _on_area_2d_mouse_entered() -> void:
 func _on_area_2d_mouse_exited() -> void:
 	mouse = false
 	pass # Replace with function body.
-
-
-func _on_timer_timeout() -> void:
-	print('еуые')
-	pass # Replace with function body.
