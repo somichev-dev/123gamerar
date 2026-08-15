@@ -18,6 +18,11 @@ config/icon="res://textures/icon.svg"
 
 Lives="*uid://dlwoyt2revmrv"
 
+[autoload]
+
+Lives="*uid://dlwoyt2revmrv"
+Achievements="*uid://btk2a0ft4f400"
+
 [display]
 
 window/size/viewport_width=320
