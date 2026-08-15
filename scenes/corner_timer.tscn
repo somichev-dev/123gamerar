@@ -1,10 +1,147 @@
 [gd_scene format=3 uid="uid://ctf803q3crk38"]
 
+[ext_resource type="Script" uid="uid://dau7q55fmyvtx" path="res://scripts/corner_timer.gd" id="1_ta8kh"]
+[ext_resource type="Texture2D" uid="uid://bgkj7qhkxfnru" path="res://sprites/corner_timer/timer_0.tres" id="2_giu4k"]
+[ext_resource type="Texture2D" uid="uid://1pnuuy5bhn1v" path="res://sprites/corner_timer/timer_1.tres" id="3_map57"]
+[ext_resource type="Texture2D" uid="uid://c62kqllf0sirx" path="res://sprites/corner_timer/timer_2.tres" id="4_k8f7w"]
+[ext_resource type="Texture2D" uid="uid://bd1ucbieb848x" path="res://sprites/corner_timer/timer_3.tres" id="5_xjlaq"]
+[ext_resource type="Texture2D" uid="uid://da3g08cejpkto" path="res://sprites/corner_timer/timer_4.tres" id="6_hb4pr"]
+[ext_resource type="Texture2D" uid="uid://bs2hpmqdcaem6" path="res://sprites/corner_timer/timer_5.tres" id="7_0gvdv"]
+[ext_resource type="Texture2D" uid="uid://b0ajkkcebd6av" path="res://sprites/corner_timer/timer_6.tres" id="8_dhagi"]
+[ext_resource type="Texture2D" uid="uid://x7rgh73hwl76" path="res://sprites/corner_timer/timer_7.tres" id="9_sit0e"]
+[ext_resource type="Texture2D" uid="uid://dd64ksmc6asee" path="res://sprites/corner_timer/timer_8.tres" id="10_7bahk"]
+[ext_resource type="Texture2D" uid="uid://b1wpxxsv3nvo6" path="res://sprites/corner_timer/timer_9.tres" id="11_6wh75"]
+
+[sub_resource type="Animation" id="Animation_6antl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_webl7"]
+_data = {
+&"RESET": SubResource("Animation_6antl")
+}
+
+[sub_resource type="Animation" id="Animation_ltiql"]
+resource_name = "clock_animation_1"
+length = 0.3
+loop_mode = 1
+step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("2_giu4k"), ExtResource("3_map57")]
+}
+
+[sub_resource type="Animation" id="Animation_m7vy3"]
+resource_name = "clock_animation_1"
+length = 0.3
+loop_mode = 1
+step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("4_k8f7w"), ExtResource("5_xjlaq")]
+}
+
+[sub_resource type="Animation" id="Animation_ygs6c"]
+resource_name = "clock_animation_1"
+length = 0.3
+loop_mode = 1
+step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("6_hb4pr"), ExtResource("7_0gvdv")]
+}
+
+[sub_resource type="Animation" id="Animation_an4ut"]
+resource_name = "clock_animation_1"
+length = 0.3
+loop_mode = 1
+step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("8_dhagi"), ExtResource("9_sit0e")]
+}
+
+[sub_resource type="Animation" id="Animation_8ngjs"]
+resource_name = "clock_animation_1"
+length = 0.3
+loop_mode = 1
+step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("10_7bahk"), ExtResource("11_6wh75")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cblbs"]
+_data = {
+&"clock_animation_1": SubResource("Animation_ltiql"),
+&"clock_animation_2": SubResource("Animation_m7vy3"),
+&"clock_animation_3": SubResource("Animation_ygs6c"),
+&"clock_animation_4": SubResource("Animation_an4ut"),
+&"clock_animation_5": SubResource("Animation_8ngjs")
+}
+
 [node name="CornerTimer" type="TextureRect" unique_id=72580181]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -239.0
+offset_bottom = -108.0
 grow_horizontal = 2
 grow_vertical = 2
+stretch_mode = 2
+script = ExtResource("1_ta8kh")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=571459962]
+libraries/ = SubResource("AnimationLibrary_webl7")
+libraries/timer_animations = SubResource("AnimationLibrary_cblbs")
