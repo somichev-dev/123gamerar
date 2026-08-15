@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://dcanuoru3nnoc"]
+
+[ext_resource type="Script" uid="uid://c8hujmdo0t6p5" path="res://scripts/rock_bonfire.gd" id="1_o5my1"]
+[ext_resource type="Texture2D" uid="uid://bkjaiogv5p7lr" path="res://sprites/key_hint_space.tres" id="2_w6r6y"]
+[ext_resource type="Texture2D" uid="uid://dpc2q3owxteyl" path="res://textures/pngtree-round-rock-png-image_8208690-2187294227.png" id="3_j56jy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ebskc"]
+font_color = Color(0.69803923, 0.05882353, 0.05882353, 1)
+
+[node name="RockBonfire" type="Node2D" unique_id=2084350268]
+script = ExtResource("1_o5my1")
+
+[node name="Control" type="Control" parent="." unique_id=1960783522]
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=2055732572]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.59717613, 0.59717613, 0.5971761, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Control" unique_id=228161756]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 83.0
+offset_right = 180.0
+offset_bottom = 123.0
+
+[node name="Label" type="Label" parent="Control/ColorRect2" unique_id=1584759738]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+label_settings = SubResource("LabelSettings_ebskc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeyHint" type="TextureRect" parent="Control" unique_id=634319052]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 98.0
+offset_top = 130.0
+offset_right = 227.0
+offset_bottom = 170.0
+texture = ExtResource("2_w6r6y")
+
+[node name="RockUpper" type="TextureRect" parent="Control" unique_id=1240938418]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 199.0
+offset_top = 5.0
+offset_right = 239.0
+offset_bottom = 45.0
+texture = ExtResource("3_j56jy")
+expand_mode = 2
+
+[node name="RockLower" type="TextureRect" parent="Control" unique_id=1046333342]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 76.0
+offset_right = 249.0
+offset_bottom = 116.0
+texture = ExtResource("3_j56jy")
+expand_mode = 2
+
+[node name="SparksPoint" type="Node2D" parent="." unique_id=1778408963]
+unique_name_in_owner = true
+position = Vector2(208, 77)
