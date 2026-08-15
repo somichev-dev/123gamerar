@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://e7824dsjmo2f"]
+
+[ext_resource type="Script" uid="uid://bqgpyypy5tbqt" path="res://scripts/transition_screen.gd" id="1_12c8c"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_f5fog"]
+
+[node name="TransitionScreen" type="Node2D" unique_id=1545455423]
+script = ExtResource("1_12c8c")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=828700921]
+offset_right = 320.0
+offset_bottom = 180.0
+color = Color(0.12225223, 0.12225223, 0.12225223, 1)
+
+[node name="FailureSprite" type="Sprite2D" parent="ColorRect" unique_id=791546564]
+unique_name_in_owner = true
+position = Vector2(159, 85)
+texture = SubResource("PlaceholderTexture2D_f5fog")
+
+[node name="Label" type="Label" parent="ColorRect/FailureSprite" unique_id=945333349]
+offset_left = -21.0
+offset_top = -12.0
+offset_right = 19.0
+offset_bottom = 11.0
+text = ":("
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SuccessSprite" type="Sprite2D" parent="ColorRect" unique_id=1419334003]
+unique_name_in_owner = true
+position = Vector2(159, 85)
+texture = SubResource("PlaceholderTexture2D_f5fog")
+
+[node name="Label" type="Label" parent="ColorRect/SuccessSprite" unique_id=1482952522]
+offset_left = -21.0
+offset_top = -12.0
+offset_right = 19.0
+offset_bottom = 11.0
+text = ":)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SurprisedSprite" type="Sprite2D" parent="ColorRect" unique_id=644429396]
+unique_name_in_owner = true
+position = Vector2(159, 85)
+texture = SubResource("PlaceholderTexture2D_f5fog")
+
+[node name="Label" type="Label" parent="ColorRect/SurprisedSprite" unique_id=1378414975]
+offset_left = -21.0
+offset_top = -12.0
+offset_right = 19.0
+offset_bottom = 11.0
+text = ":0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FasterSprite" type="Sprite2D" parent="ColorRect" unique_id=795711905]
+unique_name_in_owner = true
+position = Vector2(159, 85)
+texture = SubResource("PlaceholderTexture2D_f5fog")
+
+[node name="Label" type="Label" parent="ColorRect/FasterSprite" unique_id=1602352927]
+offset_left = -21.0
+offset_top = -12.0
+offset_right = 19.0
+offset_bottom = 11.0
+text = ">:)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PassedLevels" type="Label" parent="ColorRect" unique_id=576422410]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -62.0
+offset_right = 20.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TransitionTimer" type="Timer" parent="." unique_id=909491727]
+unique_name_in_owner = true
+
+[connection signal="timeout" from="TransitionTimer" to="." method="_on_transition_timer_timeout"]

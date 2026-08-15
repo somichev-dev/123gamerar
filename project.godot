@@ -19,6 +19,8 @@ config/icon="res://textures/icon.svg"
 
 Lives="*uid://dlwoyt2revmrv"
 Achievements="*uid://btk2a0ft4f400"
+LevelSelector="*uid://dlsnrohh4i46q"
+GamestateStorage="*uid://cdy0qw1r2qvl8"
 
 [display]
 
