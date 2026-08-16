@@ -28,7 +28,7 @@ func _ready() -> void:
 
 func _on_transition_timer_timeout() -> void:
 	if Lives.lives == 0:
-		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+		get_tree().change_scene_to_file("res://scenes/end_screen.tscn")
 	else:
 		get_tree().change_scene_to_file(LevelSelector.get_next_level())
 

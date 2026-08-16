@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://biygagmyeaoae"]
+
+[ext_resource type="Script" uid="uid://c0oytk602dep2" path="res://scripts/end_screen.gd" id="1_87vmq"]
+[ext_resource type="Texture2D" uid="uid://cvw63r23g3fbp" path="res://textures/end_bg.png" id="2_g44xs"]
+[ext_resource type="Texture2D" uid="uid://d0opx1a7lp24b" path="res://sprites/end/end_hint_0.tres" id="3_vj8vg"]
+[ext_resource type="Texture2D" uid="uid://bjo2cbjf7frw7" path="res://sprites/end/end_hint_1.tres" id="4_plosh"]
+[ext_resource type="Texture2D" uid="uid://cg2lbv7kwr015" path="res://sprites/end/end_levels_text.tres" id="5_g44xs"]
+[ext_resource type="Texture2D" uid="uid://0vtrltyvlcon" path="res://sprites/end/end_levels_1.tres" id="6_vj8vg"]
+
+[sub_resource type="Animation" id="Animation_4j4el"]
+resource_name = "KeyHintAnim"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("3_vj8vg"), ExtResource("4_plosh")]
+}
+
+[sub_resource type="Animation" id="Animation_wke0n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_vj8vg")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_um0j2"]
+_data = {
+&"KeyHintAnim": SubResource("Animation_4j4el"),
+&"RESET": SubResource("Animation_wke0n")
+}
+
+[node name="EndScreen" type="Control" unique_id=1525477872]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_87vmq")
+
+[node name="Background" type="TextureRect" parent="." unique_id=520156407]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_g44xs")
+stretch_mode = 2
+
+[node name="KeyHint" type="TextureRect" parent="." unique_id=1234718539]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 22.0
+offset_right = 309.0
+offset_bottom = 92.0
+texture = ExtResource("3_vj8vg")
+stretch_mode = 3
+
+[node name="KeyAnim" type="AnimationPlayer" parent="KeyHint" unique_id=125547831]
+libraries/ = SubResource("AnimationLibrary_um0j2")
+autoplay = &"KeyHintAnim"
+
+[node name="ScoreText" type="TextureRect" parent="." unique_id=2077928977]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 131.0
+offset_right = 127.0
+offset_bottom = 157.0
+texture = ExtResource("5_g44xs")
+stretch_mode = 2
+
+[node name="DigitPos0" type="TextureRect" parent="ScoreText" unique_id=304091977]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 105.0
+offset_top = -7.0
+offset_right = 121.0
+offset_bottom = 14.0
+texture = ExtResource("6_vj8vg")
+stretch_mode = 3
+
+[node name="DigitPos1" type="TextureRect" parent="ScoreText/DigitPos0" unique_id=1087349525]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 1.0
+offset_top = -15.5
+offset_right = 17.0
+offset_bottom = 5.5
+grow_horizontal = 0
+grow_vertical = 2
+stretch_mode = 3
+
+[node name="DigitPos2" type="TextureRect" parent="ScoreText/DigitPos0/DigitPos1" unique_id=2080818874]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 31.0
+offset_bottom = 34.0
+stretch_mode = 3

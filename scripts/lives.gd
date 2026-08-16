@@ -13,5 +13,5 @@ func _lose_life():
 	if lives == 0: emit_signal("lives_over")
 
 
-func _restore_lives():
+func restore_lives():
 	lives = max_lives
