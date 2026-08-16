@@ -1,6 +1,6 @@
 extends Node
 
-@export var max_lives: int = 0
+@export var max_lives: int = 3
 var lives: int
 signal lives_over
 

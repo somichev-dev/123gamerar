@@ -20,7 +20,7 @@ func _ready() -> void:
 	%TransitionTimer.start(transition_time)
 	%PassedLevels.text = str(GamestateStorage.passed_levels)
 	_disable_all_states()
-	for i in max(Lives.lives-1, 4):
+	for i in min(Lives.lives, 5):
 		if Lives.lives == 0: break
 		%HealthContainer.add_child(load(health_scenes[i]).instantiate())
 	state_nodes[GamestateStorage.transition_state].visible = true
