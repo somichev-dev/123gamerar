@@ -31,6 +31,7 @@ func _input(event):
 
 
 func _process(delta: float) -> void:
+	_current_timer_amount -= delta
 	if _current_timer_amount <= 0:
 		finished.emit(false)
 		
