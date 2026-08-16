@@ -1,0 +1,208 @@
+[gd_scene format=3 uid="uid://dcanuoru3nnoc"]
+
+[ext_resource type="Script" uid="uid://c8hujmdo0t6p5" path="res://scripts/rock_bonfire.gd" id="1_o5my1"]
+[ext_resource type="Texture2D" uid="uid://dskdlukpu8rr8" path="res://textures/bonfire_bg.png" id="2_u2kfl"]
+[ext_resource type="Texture2D" uid="uid://bkjaiogv5p7lr" path="res://sprites/keys/key_hint_space.tres" id="2_w6r6y"]
+[ext_resource type="PackedScene" uid="uid://ctf803q3crk38" path="res://scenes/corner_timer.tscn" id="4_kio5a"]
+[ext_resource type="PackedScene" uid="uid://umcxab2wg5v8" path="res://scenes/banging_sound_player.tscn" id="5_ebskc"]
+[ext_resource type="Texture2D" uid="uid://c25blsqu0xgub" path="res://sprites/fire/Fire_0.tres" id="6_twfyo"]
+[ext_resource type="Texture2D" uid="uid://g34xx323pc0d" path="res://sprites/fire/Fire_1.tres" id="7_ixixn"]
+[ext_resource type="Texture2D" uid="uid://dexiuaqegqp21" path="res://sprites/fire/Fire_2.tres" id="8_l8s4u"]
+[ext_resource type="Texture2D" uid="uid://dw0yhsm6mu78f" path="res://sprites/fire/Fire_3.tres" id="9_d57r1"]
+[ext_resource type="Texture2D" uid="uid://dr626qdu76mpx" path="res://sprites/fire/Fire_4.tres" id="10_l8nw0"]
+[ext_resource type="Texture2D" uid="uid://di8cb3vaofb7n" path="res://sprites/fire/Fire_5.tres" id="11_fcoun"]
+[ext_resource type="Texture2D" uid="uid://bulbp3506vxvh" path="res://sprites/fire/Fire_6.tres" id="12_d7j2l"]
+[ext_resource type="Texture2D" uid="uid://culyse85s31p0" path="res://sprites/fire/Fire_7.tres" id="13_hi0ym"]
+[ext_resource type="Texture2D" uid="uid://ctulr7i1v3b2v" path="res://sprites/rock_0.tres" id="13_l8s4u"]
+[ext_resource type="Texture2D" uid="uid://bntl6vyxf4e02" path="res://sprites/rock_1.tres" id="14_d57r1"]
+
+[sub_resource type="Animation" id="Animation_vjhp0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FireSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_twfyo")]
+}
+
+[sub_resource type="Animation" id="Animation_nhhy4"]
+resource_name = "fire_anim_0"
+length = 0.56666666
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FireSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26724514),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("6_twfyo"), ExtResource("7_ixixn")]
+}
+
+[sub_resource type="Animation" id="Animation_p5tts"]
+resource_name = "fire_anim_1"
+length = 0.56666666
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FireSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26724514),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("8_l8s4u"), ExtResource("9_d57r1")]
+}
+
+[sub_resource type="Animation" id="Animation_5qrdi"]
+resource_name = "fire_anim_2"
+length = 0.56666666
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FireSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26724514),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("10_l8nw0"), ExtResource("11_fcoun")]
+}
+
+[sub_resource type="Animation" id="Animation_plb3w"]
+resource_name = "fire_anim_3"
+length = 0.56666666
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FireSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26724514),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("12_d7j2l"), ExtResource("13_hi0ym")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aldg1"]
+_data = {
+&"RESET": SubResource("Animation_vjhp0"),
+&"fire_anim_0": SubResource("Animation_nhhy4"),
+&"fire_anim_1": SubResource("Animation_p5tts"),
+&"fire_anim_2": SubResource("Animation_5qrdi"),
+&"fire_anim_3": SubResource("Animation_plb3w")
+}
+
+[node name="RockBonfire" type="Node2D" unique_id=2084350268]
+oversampling_with_scale = 1
+script = ExtResource("1_o5my1")
+rock_positions = [Vector2(52, 18), Vector2(112, 81)]
+
+[node name="Control" type="Control" parent="." unique_id=1960783522]
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="Control" unique_id=120565943]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_u2kfl")
+
+[node name="KeyHint" type="TextureRect" parent="Control" unique_id=634319052]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 178.0
+offset_top = 141.0
+offset_right = 307.0
+offset_bottom = 175.0
+texture = ExtResource("2_w6r6y")
+stretch_mode = 2
+
+[node name="Fire" type="Control" parent="Control" unique_id=561745969]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 170.0
+offset_top = 124.0
+offset_right = 170.0
+offset_bottom = 124.0
+
+[node name="FireSprite" type="TextureRect" parent="Control/Fire" unique_id=2073119857]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -19.0
+offset_top = -52.0
+offset_right = 19.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("6_twfyo")
+stretch_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Fire" unique_id=495212393]
+libraries/ = SubResource("AnimationLibrary_aldg1")
+autoplay = &"fire_anim_0"
+
+[node name="CornerTimer" parent="Control" unique_id=72580181 instance=ExtResource("4_kio5a")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 2.0
+offset_top = 106.0
+offset_right = -237.0
+offset_bottom = -2.0
+
+[node name="RockLower" type="TextureRect" parent="Control" unique_id=1046333342]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 66.0
+offset_right = 105.0
+offset_bottom = 112.0
+texture = ExtResource("13_l8s4u")
+expand_mode = 2
+stretch_mode = 3
+
+[node name="RockUpper" type="TextureRect" parent="Control" unique_id=1240938418]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 52.0
+offset_top = 18.0
+offset_right = 92.0
+offset_bottom = 58.0
+texture = ExtResource("14_d57r1")
+expand_mode = 2
+stretch_mode = 3
+
+[node name="SparksPoint" type="Node2D" parent="." unique_id=1778408963]
+unique_name_in_owner = true
+position = Vector2(92, 66)
+
+[node name="BangingSoundPlayer" parent="." unique_id=1474131242 instance=ExtResource("5_ebskc")]
+unique_name_in_owner = true
+volume_db = -20.0
