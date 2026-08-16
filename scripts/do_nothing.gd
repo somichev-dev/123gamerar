@@ -4,6 +4,7 @@ extends Node2D
 @onready var _current_timer_amount: float = timer_amount
 
 func _ready() -> void:
+	BgAudioPlayer.play_level_music(BgAudioPlayer.MusicType.LEVEL)
 	%Explode.visible = false
 	%Explode.frame = 0
 

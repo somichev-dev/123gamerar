@@ -18,6 +18,10 @@ var modulation_colors = [Color("555555"), Color("FFFFFF")]
 var sparks_scene = preload("res://scenes/sparks.tscn")
 
 
+func _ready() -> void:
+	BgAudioPlayer.play_level_music(BgAudioPlayer.MusicType.LEVEL)
+
+
 func _process(delta: float) -> void:
 	_completion_amount -= decay_rate * delta
 	%Fire/AnimationPlayer.current_animation = "fire_anim_" + str(min(int(_completion_amount * 4), 3))

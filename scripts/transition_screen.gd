@@ -1,7 +1,7 @@
 extends Node2D
 
 
-@export var transition_time: float = 2.0
+@export var transition_time: float = 1.5
 @onready var state_nodes = [
 	%SuccessSprite,
 	%FailureSprite,
@@ -24,10 +24,16 @@ func _ready() -> void:
 		if Lives.lives == 0: break
 		%HealthContainer.add_child(load(health_scenes[i]).instantiate())
 	state_nodes[GamestateStorage.transition_state].visible = true
+	match GamestateStorage.transition_state:
+		GamestateStorage.TransitionScreenState.SURPRISED, GamestateStorage.TransitionScreenState.GOOD:
+			BgAudioPlayer.play_level_music(BgAudioPlayer.MusicType.SUCCESS)
+		GamestateStorage.TransitionScreenState.BAD:
+			BgAudioPlayer.play_level_music(BgAudioPlayer.MusicType.FAILURE)
 
 
 func _on_transition_timer_timeout() -> void:
 	if Lives.lives == 0:
+		BgAudioPlayer.play_level_music(BgAudioPlayer.MusicType.FAILURE)
 		get_tree().change_scene_to_file("res://scenes/end_screen.tscn")
 	else:
 		get_tree().change_scene_to_file(LevelSelector.get_next_level())

@@ -15,6 +15,7 @@ var key_textures = {
 @onready var _current_timer_amount: float = timer_amount
 
 func _ready() -> void:
+	BgAudioPlayer.play_level_music(BgAudioPlayer.MusicType.LEVEL)
 	finished.connect(_minigame_finished)
 	for i in amount: sequence.append(possible_keys.pick_random())
 	for key in sequence:

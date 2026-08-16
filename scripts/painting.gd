@@ -15,6 +15,7 @@ var paintings = [
 signal finished(has_won: bool)
 
 func _ready() -> void:
+	BgAudioPlayer.play_level_music(BgAudioPlayer.MusicType.LEVEL)
 	%painting.texture = paintings.pick_random()
 	%painting.self_modulate.a = 0.0
 
