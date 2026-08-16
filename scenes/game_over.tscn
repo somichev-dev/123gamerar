@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cshe6qeeuq8f8"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_tg3de"]
+
+[node name="game over" type="Control" unique_id=376805669]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=500448397]
+layout_mode = 0
+offset_right = 319.0
+offset_bottom = 178.0
+texture = SubResource("PlaceholderTexture2D_tg3de")
