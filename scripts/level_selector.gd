@@ -3,6 +3,7 @@ extends Node
 @export var level_list = [
 	"res://scenes/rock_bonfire.tscn",
 	"res://scenes/stick_bonfire.tscn",
+	"res://scenes/do_nothing.tscn"
 ]
 @onready var _current_levels = []
 
