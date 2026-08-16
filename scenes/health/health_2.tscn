@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://eyl4int2wgkm"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_vwr0o"]
+[ext_resource type="Texture2D" uid="uid://46i0otycuxx6" path="res://textures/health.png" id="1_0os06"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqi8c"]
+atlas = ExtResource("1_0os06")
+region = Rect2(59, 0, 59, 64)
 
 [node name="TextureRect2" type="TextureRect" unique_id=1132442116]
-custom_minimum_size = Vector2(32, 32)
-custom_maximum_size = Vector2(32, 32)
-texture = SubResource("PlaceholderTexture2D_vwr0o")
+texture = SubResource("AtlasTexture_wqi8c")
+stretch_mode = 2

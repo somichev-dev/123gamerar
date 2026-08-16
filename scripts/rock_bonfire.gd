@@ -27,6 +27,8 @@ func _process(delta: float) -> void:
 	%CornerTimer.change_anim(int(_current_timer_amount)+1)
 	if _current_timer_amount <= 0:
 		var has_won = _completion_amount >= win_threshold
+		if not has_won:
+			Lives._lose_life()
 		GamestateStorage.passed_levels += int(has_won)
 		GamestateStorage.transition_state = GamestateStorage.TransitionScreenState.GOOD if has_won else GamestateStorage.TransitionScreenState.BAD
 		get_tree().change_scene_to_file("res://scenes/transition_screen.tscn")
