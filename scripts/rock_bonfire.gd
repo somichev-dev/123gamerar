@@ -45,7 +45,6 @@ func _process(delta: float) -> void:
 		if not has_won:
 			Lives._lose_life()
 		GamestateStorage.passed_levels += int(has_won)
-		print_debug(Time.get_ticks_msec())
 		GamestateStorage.transition_state = GamestateStorage.TransitionScreenState.GOOD if has_won else GamestateStorage.TransitionScreenState.BAD
 		get_tree().change_scene_to_file("res://scenes/transition_screen.tscn")
 
