@@ -333,6 +333,8 @@ theme_override_colors/icon_hover_color = Color(0.88, 0.88, 0.88, 0)
 theme_override_colors/icon_hover_pressed_color = Color(0.88, 0.88, 0.88, 0)
 theme_override_colors/icon_disabled_color = Color(0.88, 0.88, 0.88, 0)
 shortcut = SubResource("Shortcut_f5fog")
+shortcut_feedback = false
+shortcut_in_tooltip = false
 flat = true
 
 [node name="StickAnimPlayer" type="AnimationPlayer" parent="Background/Button" unique_id=728874753]
