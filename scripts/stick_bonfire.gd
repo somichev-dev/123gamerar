@@ -8,6 +8,7 @@ extends Node2D
 
 @onready var _current_timer_amount: float = timer_amount
 var _stick_position: bool = false ## used to switch between frames for stick/hands
+var modulation_colors = [Color("555555"), Color("FFFFFF")]
 var _completion_amount: float = 0 :
 	set(value):
 		_completion_amount = min(value, 1.1)
@@ -17,8 +18,8 @@ var _completion_amount: float = 0 :
 func _process(delta: float) -> void:
 	_completion_amount -= decay_rate * delta
 	$Control/ColorRect2/Label.text = str(int(_completion_amount * 4))
-	$Control/TextureRectLeft.visible = !_stick_position
-	$Control/TextureRectRight.visible = _stick_position
+	$Control/TextureRectLeft.modulate = modulation_colors[int(!_stick_position)]
+	$Control/TextureRectRight.modulate = modulation_colors[int(_stick_position)]
 	
 	## win/transition block
 	_current_timer_amount -= delta

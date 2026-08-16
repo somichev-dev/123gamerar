@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cxp4bohko8qhm"]
 
-[ext_resource type="Script" uid="uid://c2juo0i0i83l1" path="res://spell_casting.gd" id="1_hy3is"]
+[ext_resource type="Script" uid="uid://c2juo0i0i83l1" path="res://scripts/spell_casting.gd" id="1_hy3is"]
 [ext_resource type="PackedScene" uid="uid://ctf803q3crk38" path="res://scenes/corner_timer.tscn" id="2_7n3ga"]
 
 [node name="spell_casting" type="Node2D" unique_id=465704180]
