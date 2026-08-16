@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://umcxab2wg5v8"]
+
+[ext_resource type="AudioStream" uid="uid://dc2blmjpysdq0" path="res://sounds/bang-placeholder.wav" id="1_3t42u"]
+
+[node name="BangingSoundPlayer" type="AudioStreamPlayer" unique_id=1474131242]
+stream = ExtResource("1_3t42u")

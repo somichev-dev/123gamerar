@@ -1,6 +1,292 @@
 [gd_scene format=3 uid="uid://dok60415fti6r"]
 
 [ext_resource type="Script" uid="uid://bea3vmm4v5jwd" path="res://scripts/menu.gd" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://da1fq4qo4m4b2" path="res://textures/menu_bg.png" id="2_vjb58"]
+[ext_resource type="Texture2D" uid="uid://dsrp1alxryetk" path="res://sprites/menu/menu_start.tres" id="3_mhnvy"]
+[ext_resource type="Texture2D" uid="uid://djrawnn5xi2ho" path="res://sprites/menu/menu_title.tres" id="4_4ytvr"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_83qmo"]
+action = &"key_generic"
+
+[sub_resource type="Shortcut" id="Shortcut_f5fog"]
+events = [SubResource("InputEventAction_83qmo")]
+
+[sub_resource type="Animation" id="Animation_mhnvy"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/TextureRect:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/TextureRect:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/TextureRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control:scale:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control:scale:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_g3eks"]
+resource_name = "StartButtonAnim"
+length = 1.0000033854875714
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("Control/TextureRect:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.033333335)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("Control/TextureRect:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.033333335)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/TextureRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control:scale:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1.2, 0, 0, 0.083333336, -0.033333343, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.033333335, 0.5)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control:scale:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1.2, 0, 0, 0.083333336, -0.033333343, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.033333335, 0.5)
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.03333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v86rl"]
+_data = {
+&"RESET": SubResource("Animation_mhnvy"),
+&"StartButtonAnim": SubResource("Animation_g3eks")
+}
+
+[sub_resource type="Animation" id="Animation_13sgg"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath(".:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(55, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(10, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(130, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("..:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(55, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_i6lef"]
+resource_name = "title_text_anim"
+length = 2.4
+loop_mode = 1
+step = 0.016666668
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(),
+"points": PackedFloat32Array(),
+"times": PackedFloat32Array()
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath(".:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(),
+"points": PackedFloat32Array(),
+"times": PackedFloat32Array()
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath(".:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(),
+"points": PackedFloat32Array(),
+"times": PackedFloat32Array()
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/path = NodePath("..:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(125, -0.25, 0, 0.25, 0, 125, -0.099920094, 0, 0, 0),
+"times": PackedFloat32Array(1.0247672e-09, 1.1990411)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("..:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(1, 2, 2, 2),
+"points": PackedFloat32Array(50, 0, 0, 0, 0, 52, -0.04444445, 0, 0.15555558, 0, 48, -0.10000001, 1.8214287, 0.055555563, -1.0119048, 50, 0, 0, 0, 0),
+"times": PackedFloat32Array(1.0247672e-09, 0.53333336, 1.7577465, 2.4)
+}
+
+[sub_resource type="Animation" id="Animation_70i5f"]
+resource_name = "title_text_wobble"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mj5lg"]
+_data = {
+&"RESET": SubResource("Animation_13sgg"),
+&"title_text_hover": SubResource("Animation_i6lef"),
+&"title_text_wobble": SubResource("Animation_70i5f")
+}
 
 [node name="menu" type="Control" unique_id=391375721]
 layout_mode = 3
@@ -11,14 +297,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yqeox")
 
-[node name="Background" type="ColorRect" parent="." unique_id=1287745447]
+[node name="Background" type="TextureRect" parent="." unique_id=1390039756]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+texture = ExtResource("2_vjb58")
 
 [node name="Button" type="Button" parent="Background" unique_id=69695624]
 layout_mode = 1
@@ -27,27 +313,82 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -137.0
-offset_top = -70.0
-offset_right = 135.0
-offset_bottom = -17.0
+offset_left = -27.0
+offset_top = -98.0
+offset_right = 33.105225
+offset_bottom = -49.94464
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/font_size = 32
-text = "Play"
+theme_override_colors/font_color = Color(0.88, 0.88, 0.88, 0)
+theme_override_colors/font_focus_color = Color(0.88, 0.88, 0.88, 0)
+theme_override_colors/font_pressed_color = Color(0.88, 0.88, 0.88, 0)
+theme_override_colors/font_hover_color = Color(0.88, 0.88, 0.88, 0)
+theme_override_colors/font_hover_pressed_color = Color(0.88, 0.88, 0.88, 0)
+theme_override_colors/font_disabled_color = Color(0.88, 0.88, 0.88, 0)
+theme_override_colors/font_outline_color = Color(0.88, 0.88, 0.88, 0)
+theme_override_colors/icon_normal_color = Color(0.88, 0.88, 0.88, 0)
+theme_override_colors/icon_focus_color = Color(0.88, 0.88, 0.88, 0)
+theme_override_colors/icon_pressed_color = Color(0.88, 0.88, 0.88, 0)
+theme_override_colors/icon_hover_color = Color(0.88, 0.88, 0.88, 0)
+theme_override_colors/icon_hover_pressed_color = Color(0.88, 0.88, 0.88, 0)
+theme_override_colors/icon_disabled_color = Color(0.88, 0.88, 0.88, 0)
+shortcut = SubResource("Shortcut_f5fog")
+flat = true
 
-[node name="Label" type="Label" parent="Background" unique_id=1650694150]
+[node name="StickAnimPlayer" type="AnimationPlayer" parent="Background/Button" unique_id=728874753]
+libraries/ = SubResource("AnimationLibrary_v86rl")
+
+[node name="Control" type="Control" parent="Background/Button" unique_id=969287170]
+visible = false
+anchors_preset = 0
+offset_left = 31.0
+offset_top = 21.0
+offset_right = 32.0
+offset_bottom = 22.0
+
+[node name="TextureRect" type="TextureRect" parent="Background/Button/Control" unique_id=804256527]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -224.0
-offset_right = 224.0
-offset_bottom = 128.0
+anchor_bottom = 0.5
+offset_left = -30.562723
+offset_top = -20.440983
+offset_right = 26.437277
+offset_bottom = 25.559017
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 32
-text = "123Game.rar"
-horizontal_alignment = 1
-vertical_alignment = 1
+grow_vertical = 2
+texture = ExtResource("3_mhnvy")
+stretch_mode = 2
+
+[node name="Title" type="Control" parent="Background" unique_id=2043969441]
+anchors_preset = 0
+offset_left = 130.0
+offset_top = 50.0
+offset_right = 131.0
+offset_bottom = 51.000008
+
+[node name="TitleImg" type="TextureRect" parent="Background/Title" unique_id=288364375]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.5
+offset_top = -33.5
+offset_right = 79.5
+offset_bottom = 33.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_4ytvr")
+stretch_mode = 2
+
+[node name="HoverPlayer" type="AnimationPlayer" parent="Background/Title/TitleImg" unique_id=2030952859]
+reset_on_save = false
+libraries/ = SubResource("AnimationLibrary_mj5lg")
+autoplay = &"title_text_hover"
 
 [connection signal="button_down" from="Background/Button" to="." method="_on_button_button_down"]
+[connection signal="animation_finished" from="Background/Button/StickAnimPlayer" to="." method="_on_stick_anim_player_animation_finished"]

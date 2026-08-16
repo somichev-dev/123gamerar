@@ -40,6 +40,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		var sparksInstance = sparks_scene.instantiate()
 		sparksInstance.emitting = true
 		%SparksPoint.add_child(sparksInstance)
+		%BangingSoundPlayer.play()
 		return
 	if event.is_action_released("key_generic"):
 		_rock_position = false

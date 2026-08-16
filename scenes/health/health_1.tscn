@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bp26ibnufi126"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_vwr0o"]
+
+[node name="TextureRect" type="TextureRect" unique_id=1310512169]
+custom_minimum_size = Vector2(32, 32)
+custom_maximum_size = Vector2(32, 32)
+texture = SubResource("PlaceholderTexture2D_vwr0o")
