@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://bhurfhyak5o0c"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_edbm4"]
+size = Vector2(50, 50)
+
+[resource]
+atlas = SubResource("PlaceholderTexture2D_edbm4")
+region = Rect2(0, 0, 50, 50)
