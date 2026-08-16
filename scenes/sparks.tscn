@@ -1,13 +1,24 @@
 [gd_scene format=3 uid="uid://w8o0pjmtp3s5"]
 
-[node name="Sparks" type="CPUParticles2D" unique_id=1552393853]
+[ext_resource type="Texture2D" uid="uid://cuid6kdrljjnl" path="res://textures/bonfire_textures.png" id="1_xxqkp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8s4u"]
+atlas = ExtResource("1_xxqkp")
+region = Rect2(132, 111, 12, 19)
+
+[sub_resource type="Gradient" id="Gradient_fi1w3"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.30864197, 0.654321)
+colors = PackedColorArray(0.8745098, 0.24705882, 0.08235294, 1, 0.85490197, 0.5254902, 0.24313726, 1, 0.9098039, 0.75686276, 0.4392157, 1)
+
+[node name="Sparks" type="CPUParticles2D" unique_id=1708664760]
 emitting = false
-lifetime = 0.41
+amount = 4
+texture = SubResource("AtlasTexture_l8s4u")
+lifetime = 0.33
 one_shot = true
 explosiveness = 1.0
-direction = Vector2(-1, 0)
-initial_velocity_min = 198.02
-initial_velocity_max = 198.02
-scale_amount_min = 3.0
-scale_amount_max = 5.0
-color = Color(1, 0.65, 0, 1)
+spread = 28.96
+initial_velocity_min = 277.23
+initial_velocity_max = 306.93
+color_initial_ramp = SubResource("Gradient_fi1w3")
