@@ -96,4 +96,3 @@ position = Vector2(208, 77)
 [node name="BangingSoundPlayer" parent="." unique_id=1474131242 instance=ExtResource("5_ebskc")]
 unique_name_in_owner = true
 volume_db = -20.0
-autoplay = false
