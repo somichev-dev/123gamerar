@@ -63,13 +63,6 @@ offset_bottom = 164.0
 texture = ExtResource("2_kfwu0")
 stretch_mode = 2
 
-[node name="TintRect" type="ColorRect" parent="Control/TextureRectLeft" unique_id=420919779]
-visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0.20511726, 0.2051175, 0.20511737, 0.6745098)
-
 [node name="TextureRectRight" type="TextureRect" parent="Control" unique_id=1352052901]
 oversampling_with_scale = 1
 layout_mode = 0
@@ -79,13 +72,6 @@ offset_right = 202.0
 offset_bottom = 164.0
 texture = ExtResource("3_dd6e0")
 stretch_mode = 2
-
-[node name="TintRect" type="ColorRect" parent="Control/TextureRectRight" unique_id=825364451]
-visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0.20511726, 0.2051175, 0.20511737, 0.6745098)
 
 [node name="CornerTimer" parent="Control" unique_id=72580181 instance=ExtResource("4_dd6e0")]
 unique_name_in_owner = true

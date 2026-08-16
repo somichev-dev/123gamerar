@@ -2,14 +2,22 @@ extends Node2D
 
 @export var timer_amount: float = 5.0
 @export var amount = int(5 * GamestateStorage.difficulty_scale)
-var possible_keys = ["W", "A", "S", "D"]
+var modulation_colors = [Color("555555"), Color("FFFFFF")]
+var input_threshold = 5.0
+var possible_keys = ["key_left", "key_right", "key_down", "key_up"]
 var sequence = []
 
 var key_textures = {
-	"W": preload("res://sprites/keys/key_hint_w.tres"),
-	"A": preload("res://sprites/keys/key_hint_a.tres"),
-	"S": preload("res://sprites/keys/key_hint_s.tres"),
-	"D": preload("res://sprites/keys/key_hint_d.tres")
+	"key_up": preload("res://sprites/keys/key_hint_w.tres"),
+	"key_left": preload("res://sprites/keys/key_hint_a.tres"),
+	"key_down": preload("res://sprites/keys/key_hint_s.tres"),
+	"key_right": preload("res://sprites/keys/key_hint_d.tres")
+}
+var target_vectors = {
+	"key_up": Vector2(0, 1),
+	"key_left": Vector2(-1, 0),
+	"key_down": Vector2(0, -1),
+	"key_right": Vector2(1, 0),
 }
 
 @onready var _current_timer_amount: float = timer_amount
@@ -30,16 +38,20 @@ var current_index: int = 0
 signal finished(has_won: bool)
 
 func _input(event):
-	if event is InputEventKey and event.pressed:
-		var pressed_key = event.as_text()
-		if pressed_key not in possible_keys:
-			return
-		if pressed_key != sequence[current_index]:
-			finished.emit(false)
-			return
-		current_index += 1
-		if current_index == sequence.size():
-			finished.emit(true)
+	## это отвратительный код для поимки actions
+	var input_vector = Input.get_vector("key_left", "key_right", "key_down", "key_up").normalized()
+	if input_vector.length_squared() < 0.1: return
+	var target_vector = target_vectors[sequence[current_index]]
+	var dot = input_vector.dot(target_vector)
+	var is_right_action_pressed = dot >= cos(deg_to_rad(input_threshold))
+	
+	if !is_right_action_pressed:
+		finished.emit(false)
+		return
+	%SequenceContainer.get_child(current_index).modulate = modulation_colors[0]
+	current_index += 1
+	if current_index == sequence.size():
+		finished.emit(true)
 
 
 func _process(delta: float) -> void:
