@@ -1,7 +1,7 @@
 extends Node2D
 
 
-@export var transition_time: float = 1.5
+@export var transition_time: float = 2
 @onready var state_nodes = [
 	%SuccessSprite,
 	%FailureSprite,
@@ -23,6 +23,9 @@ func _ready() -> void:
 	for i in min(Lives.lives, 5):
 		if Lives.lives == 0: break
 		%HealthContainer.add_child(load(health_scenes[i]).instantiate())
+	if (GamestateStorage.check_diff_increase()):
+		GamestateStorage.increase_difficulty()
+		GamestateStorage.transition_state = GamestateStorage.TransitionScreenState.FASTER
 	state_nodes[GamestateStorage.transition_state].visible = true
 	match GamestateStorage.transition_state:
 		GamestateStorage.TransitionScreenState.SURPRISED:

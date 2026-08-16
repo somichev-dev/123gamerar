@@ -18,7 +18,7 @@ func _input(event): #сом сам разберёшся как это в гей�
 		get_tree().change_scene_to_file("res://scenes/transition_screen.tscn")
 
 func _process(delta: float) -> void:
-	_current_timer_amount -= delta
+	_current_timer_amount -= delta * GamestateStorage.difficulty_scale
 	%CornerTimer.change_anim(int(_current_timer_amount)+1)
 	if _current_timer_amount <= 0:
 		var has_won = true

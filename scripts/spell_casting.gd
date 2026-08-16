@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var timer_amount: float = 5.0
-@export var amount = int(5 * GamestateStorage.difficulty_scale)
+@export var amount = 5
 var modulation_colors = [Color("555555"), Color("FFFFFF")]
 var input_threshold = 5.0
 var possible_keys = ["key_left", "key_right", "key_down", "key_up"]
@@ -40,23 +40,26 @@ signal finished(has_won: bool)
 
 func _input(event):
 	## это отвратительный код для поимки actions
-	var input_vector = Input.get_vector("key_left", "key_right", "key_down", "key_up").normalized()
-	if input_vector.length_squared() < 0.1: return
-	var target_vector = target_vectors[sequence[current_index]]
-	var dot = input_vector.dot(target_vector)
-	var is_right_action_pressed = dot >= cos(deg_to_rad(input_threshold))
-	
+	var input_matrix = {
+		"key_up": int(event.is_action_pressed("key_up")),
+		"key_left": int(event.is_action_pressed("key_left")),
+		"key_down": int(event.is_action_pressed("key_down")),
+		"key_right": int(event.is_action_pressed("key_right")),
+	}
+	var reducent = input_matrix["key_up"] + input_matrix["key_down"] + input_matrix["key_left"] + input_matrix["key_right"]
+	if reducent == 0: return
+	var is_right_action_pressed = (input_matrix[sequence[current_index]]) and reducent < 3
 	if !is_right_action_pressed:
 		finished.emit(false)
-		return
-	%SequenceContainer.get_child(current_index).modulate = modulation_colors[0]
-	current_index += 1
-	if current_index == sequence.size():
-		finished.emit(true)
+	else:
+		%SequenceContainer.get_child(current_index).modulate = modulation_colors[0]
+		current_index += 1
+		if current_index == sequence.size():
+			finished.emit(true)
 
 
 func _process(delta: float) -> void:
-	_current_timer_amount -= delta
+	_current_timer_amount -= delta * GamestateStorage.difficulty_scale
 
 	%CornerTimer.change_anim(int(_current_timer_amount)+1)
 	if _current_timer_amount <= 0:
