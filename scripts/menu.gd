@@ -1,5 +1,10 @@
 extends Control
 
+
+func _ready() -> void:
+	BgAudioPlayer.play_level_music(BgAudioPlayer.MusicType.MENU)
+
+
 func _on_button_button_down() -> void:
 	Achievements.unlock("start_game")
 	$Background/Button/StickAnimPlayer.play("StartButtonAnim")

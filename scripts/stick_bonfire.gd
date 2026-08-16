@@ -15,6 +15,10 @@ var _completion_amount: float = 0 :
 		_completion_amount = max(_completion_amount, 0)
 
 
+func _ready() -> void:
+	BgAudioPlayer.play_level_music(BgAudioPlayer.MusicType.LEVEL)
+
+
 func _process(delta: float) -> void:
 	_completion_amount -= decay_rate * delta
 	$Control/ColorRect2/Label.text = str(int(_completion_amount * 4))

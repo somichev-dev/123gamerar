@@ -6,6 +6,17 @@ extends Node2D
 @export var timer_amount: float = 5.0
 @export var win_threshold: float = 0.9
 
+var rock_sounds = [
+	preload("res://sounds/rocks_1.wav"),
+	preload("res://sounds/rocks_2.wav"),
+	preload("res://sounds/rocks_3.wav"),
+	preload("res://sounds/rocks_4.wav"),
+	preload("res://sounds/rocks_5.wav"),
+	preload("res://sounds/rocks_6.wav"),
+	preload("res://sounds/rocks_7.wav"),
+	preload("res://sounds/rocks_8.wav"),
+]
+
 @onready var _current_timer_amount: float = timer_amount
 var _rock_position: bool = false ## used to switch between frames for rocks
 var _completion_amount: float = 0 :
@@ -16,6 +27,10 @@ var _completion_amount: float = 0 :
 var modulation_colors = [Color("555555"), Color("FFFFFF")]
 @export var rock_positions = [Vector2(199.0, 5.0), Vector2(199.0, 54.0)]
 var sparks_scene = preload("res://scenes/sparks.tscn")
+
+
+func _ready() -> void:
+	BgAudioPlayer.play_level_music(BgAudioPlayer.MusicType.LEVEL)
 
 
 func _process(delta: float) -> void:
@@ -42,6 +57,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		var sparksInstance = sparks_scene.instantiate()
 		sparksInstance.emitting = true
 		%SparksPoint.add_child(sparksInstance)
+		%BangingSoundPlayer.stream = rock_sounds.pick_random()
 		%BangingSoundPlayer.play()
 		return
 	if event.is_action_released("key_generic"):
