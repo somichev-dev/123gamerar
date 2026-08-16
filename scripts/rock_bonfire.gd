@@ -20,7 +20,7 @@ var sparks_scene = preload("res://scenes/sparks.tscn")
 
 func _process(delta: float) -> void:
 	_completion_amount -= decay_rate * delta
-	$Control/ColorRect2/Label.text = str(int(_completion_amount * 4))
+	%Fire/AnimationPlayer.current_animation = "fire_anim_" + str(min(int(_completion_amount * 4), 3))
 	
 	## win/transition block
 	_current_timer_amount -= delta

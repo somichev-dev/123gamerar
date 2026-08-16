@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://bntl6vyxf4e02"]
+
+[ext_resource type="Texture2D" uid="uid://cuid6kdrljjnl" path="res://textures/bonfire_textures.png" id="1_a7opi"]
+
+[resource]
+atlas = ExtResource("1_a7opi")
+region = Rect2(45, 113, 33, 40)
