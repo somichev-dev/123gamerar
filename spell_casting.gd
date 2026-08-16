@@ -20,6 +20,9 @@ func _ready() -> void:
 	for key in sequence:
 		var icon = TextureRect.new()
 		icon.texture = key_textures[key]
+		icon.expand_mode = TextureRect.EXPAND_KEEP_SIZE
+		icon.stretch_mode = TextureRect.STRETCH_KEEP_CENTERED
+		icon.size = icon.texture.get_size()
 		%SequenceContainer.add_child(icon)
 
 var current_index: int = 0

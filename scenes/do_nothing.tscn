@@ -1,0 +1,166 @@
+[gd_scene format=3 uid="uid://dcnfg0t863eoc"]
+
+[ext_resource type="Texture2D" uid="uid://dwxcmk2knj7p5" path="res://textures/explosion_spritesheet.png" id="1_r5ya1"]
+[ext_resource type="Script" uid="uid://dngqrk1cxouf3" path="res://scripts/do_nothing.gd" id="1_rwidy"]
+[ext_resource type="PackedScene" uid="uid://ctf803q3crk38" path="res://scenes/corner_timer.tscn" id="3_o814p"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_tg3de"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwidy"]
+atlas = ExtResource("1_r5ya1")
+region = Rect2(0, 0, 71, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o814p"]
+atlas = ExtResource("1_r5ya1")
+region = Rect2(71, 0, 71, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t586k"]
+atlas = ExtResource("1_r5ya1")
+region = Rect2(142, 0, 71, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmwp3"]
+atlas = ExtResource("1_r5ya1")
+region = Rect2(213, 0, 71, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kppn2"]
+atlas = ExtResource("1_r5ya1")
+region = Rect2(284, 0, 71, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1dxe6"]
+atlas = ExtResource("1_r5ya1")
+region = Rect2(355, 0, 71, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18s2u"]
+atlas = ExtResource("1_r5ya1")
+region = Rect2(426, 0, 71, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i22u3"]
+atlas = ExtResource("1_r5ya1")
+region = Rect2(497, 0, 71, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohx3r"]
+atlas = ExtResource("1_r5ya1")
+region = Rect2(568, 0, 71, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fstdw"]
+atlas = ExtResource("1_r5ya1")
+region = Rect2(639, 0, 71, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_foc02"]
+atlas = ExtResource("1_r5ya1")
+region = Rect2(710, 0, 71, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2738w"]
+atlas = ExtResource("1_r5ya1")
+region = Rect2(781, 0, 71, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qy74m"]
+atlas = ExtResource("1_r5ya1")
+region = Rect2(852, 0, 71, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t83am"]
+atlas = ExtResource("1_r5ya1")
+region = Rect2(923, 0, 71, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_im7jr"]
+atlas = ExtResource("1_r5ya1")
+region = Rect2(994, 0, 71, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nv7ej"]
+atlas = ExtResource("1_r5ya1")
+region = Rect2(1065, 0, 71, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8isl"]
+atlas = ExtResource("1_r5ya1")
+region = Rect2(1136, 0, 71, 98)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_utmpi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwidy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o814p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t586k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmwp3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kppn2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1dxe6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18s2u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i22u3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohx3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fstdw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_foc02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2738w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qy74m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t83am")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_im7jr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nv7ej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8isl")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="do_nothing" type="Node2D" unique_id=73329095]
+script = ExtResource("1_rwidy")
+
+[node name="Control" type="Control" parent="." unique_id=1133851494]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=466495630]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 180.0
+texture = SubResource("PlaceholderTexture2D_tg3de")
+
+[node name="CornerTimer" parent="Control" unique_id=72580181 instance=ExtResource("3_o814p")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 4.0
+offset_top = 105.0
+offset_right = 45.0
+offset_bottom = 137.0
+
+[node name="Explode" type="AnimatedSprite2D" parent="." unique_id=2102855885]
+unique_name_in_owner = true
+process_mode = 2
+visible = false
+position = Vector2(160, 82)
+sprite_frames = SubResource("SpriteFrames_utmpi")
+frame = 16
+frame_progress = 0.18819648
