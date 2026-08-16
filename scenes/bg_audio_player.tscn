@@ -5,3 +5,5 @@
 [node name="BgAudioPlayer" type="AudioStreamPlayer" unique_id=1762037657]
 volume_db = -15.0
 script = ExtResource("1_0v6o2")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

@@ -25,3 +25,7 @@ func play_level_music(type: MusicType) -> void:
 		pitch_scale = GamestateStorage.difficulty_scale
 	stream = sound_dict[type]
 	play()
+
+
+func _on_finished() -> void:
+	print_debug(Time.get_ticks_msec())

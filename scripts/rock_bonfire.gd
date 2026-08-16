@@ -6,6 +6,17 @@ extends Node2D
 @export var timer_amount: float = 5.0
 @export var win_threshold: float = 0.9
 
+var rock_sounds = [
+	preload("res://sounds/rocks_1.wav"),
+	preload("res://sounds/rocks_2.wav"),
+	preload("res://sounds/rocks_3.wav"),
+	preload("res://sounds/rocks_4.wav"),
+	preload("res://sounds/rocks_5.wav"),
+	preload("res://sounds/rocks_6.wav"),
+	preload("res://sounds/rocks_7.wav"),
+	preload("res://sounds/rocks_8.wav"),
+]
+
 @onready var _current_timer_amount: float = timer_amount
 var _rock_position: bool = false ## used to switch between frames for rocks
 var _completion_amount: float = 0 :
@@ -34,6 +45,7 @@ func _process(delta: float) -> void:
 		if not has_won:
 			Lives._lose_life()
 		GamestateStorage.passed_levels += int(has_won)
+		print_debug(Time.get_ticks_msec())
 		GamestateStorage.transition_state = GamestateStorage.TransitionScreenState.GOOD if has_won else GamestateStorage.TransitionScreenState.BAD
 		get_tree().change_scene_to_file("res://scenes/transition_screen.tscn")
 
@@ -46,6 +58,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		var sparksInstance = sparks_scene.instantiate()
 		sparksInstance.emitting = true
 		%SparksPoint.add_child(sparksInstance)
+		%BangingSoundPlayer.stream = rock_sounds.pick_random()
 		%BangingSoundPlayer.play()
 		return
 	if event.is_action_released("key_generic"):
