@@ -1,137 +1,73 @@
 [gd_scene format=3 uid="uid://dcnfg0t863eoc"]
 
-[ext_resource type="Texture2D" uid="uid://dwxcmk2knj7p5" path="res://textures/explosion_spritesheet.png" id="1_r5ya1"]
 [ext_resource type="Script" uid="uid://dngqrk1cxouf3" path="res://scripts/do_nothing.gd" id="1_rwidy"]
+[ext_resource type="Texture2D" uid="uid://ddfa86uhron4x" path="res://textures/idle_bg.png" id="2_cf3ss"]
 [ext_resource type="PackedScene" uid="uid://ctf803q3crk38" path="res://scenes/corner_timer.tscn" id="3_o814p"]
+[ext_resource type="Texture2D" uid="uid://cugyajsimiag4" path="res://sprites/sheep_bubble/sheep_0.tres" id="4_ob8gt"]
+[ext_resource type="Texture2D" uid="uid://oh4oy6hhleai" path="res://sprites/sheep_bubble/sheep_4.tres" id="5_87sca"]
+[ext_resource type="Texture2D" uid="uid://bam388ubqdk1" path="res://sprites/sheep_bubble/sheep_5.tres" id="6_1v1t0"]
+[ext_resource type="Texture2D" uid="uid://c5uus1mv2cefn" path="res://sprites/sheep_bubble/sheep_6.tres" id="7_fbqkm"]
+[ext_resource type="Texture2D" uid="uid://dav5pag2tm6ow" path="res://sprites/sheep_bubble/sheep_7.tres" id="8_xmlrj"]
+[ext_resource type="Texture2D" uid="uid://dl7ef8eil37v8" path="res://sprites/sheep_bubble/sheep_8.tres" id="9_pt6qr"]
+[ext_resource type="Texture2D" uid="uid://dypwxr1kqcep" path="res://sprites/sheep_bubble/sheep_9.tres" id="10_bsk4o"]
+[ext_resource type="Texture2D" uid="uid://c5oxavhhun0su" path="res://sprites/sheep_bubble/sheep_1.tres" id="11_76uwp"]
+[ext_resource type="Texture2D" uid="uid://bqk5aibphcqfu" path="res://sprites/sheep_bubble/sheep_2.tres" id="12_1rjal"]
+[ext_resource type="Texture2D" uid="uid://cm00ufn587oct" path="res://sprites/sheep_bubble/sheep_3.tres" id="13_hb72h"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_tg3de"]
+[sub_resource type="Animation" id="Animation_w6u1b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_ob8gt")]
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rwidy"]
-atlas = ExtResource("1_r5ya1")
-region = Rect2(0, 0, 71, 98)
+[sub_resource type="Animation" id="Animation_y2xv6"]
+resource_name = "disrupt_anim"
+length = 0.7000033698413521
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.107296504, 0.2, 0.3, 0.4, 0.5, 0.60000336),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_87sca"), ExtResource("6_1v1t0"), ExtResource("7_fbqkm"), ExtResource("8_xmlrj"), ExtResource("9_pt6qr"), ExtResource("10_bsk4o"), null]
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_o814p"]
-atlas = ExtResource("1_r5ya1")
-region = Rect2(71, 0, 71, 98)
+[sub_resource type="Animation" id="Animation_aj1rc"]
+resource_name = "normal_anim"
+length = 0.8000033750567586
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.20127657, 0.39947662, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_ob8gt"), ExtResource("11_76uwp"), ExtResource("12_1rjal"), ExtResource("13_hb72h")]
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t586k"]
-atlas = ExtResource("1_r5ya1")
-region = Rect2(142, 0, 71, 98)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nmwp3"]
-atlas = ExtResource("1_r5ya1")
-region = Rect2(213, 0, 71, 98)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kppn2"]
-atlas = ExtResource("1_r5ya1")
-region = Rect2(284, 0, 71, 98)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1dxe6"]
-atlas = ExtResource("1_r5ya1")
-region = Rect2(355, 0, 71, 98)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_18s2u"]
-atlas = ExtResource("1_r5ya1")
-region = Rect2(426, 0, 71, 98)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i22u3"]
-atlas = ExtResource("1_r5ya1")
-region = Rect2(497, 0, 71, 98)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ohx3r"]
-atlas = ExtResource("1_r5ya1")
-region = Rect2(568, 0, 71, 98)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fstdw"]
-atlas = ExtResource("1_r5ya1")
-region = Rect2(639, 0, 71, 98)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_foc02"]
-atlas = ExtResource("1_r5ya1")
-region = Rect2(710, 0, 71, 98)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2738w"]
-atlas = ExtResource("1_r5ya1")
-region = Rect2(781, 0, 71, 98)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qy74m"]
-atlas = ExtResource("1_r5ya1")
-region = Rect2(852, 0, 71, 98)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t83am"]
-atlas = ExtResource("1_r5ya1")
-region = Rect2(923, 0, 71, 98)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_im7jr"]
-atlas = ExtResource("1_r5ya1")
-region = Rect2(994, 0, 71, 98)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nv7ej"]
-atlas = ExtResource("1_r5ya1")
-region = Rect2(1065, 0, 71, 98)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m8isl"]
-atlas = ExtResource("1_r5ya1")
-region = Rect2(1136, 0, 71, 98)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_utmpi"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rwidy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o814p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t586k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nmwp3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kppn2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1dxe6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_18s2u")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i22u3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ohx3r")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fstdw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_foc02")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2738w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qy74m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t83am")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_im7jr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nv7ej")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m8isl")
-}],
-"loop": 0,
-"name": &"default",
-"speed": 12.0
-}]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jguox"]
+_data = {
+&"RESET": SubResource("Animation_w6u1b"),
+&"disrupt_anim": SubResource("Animation_y2xv6"),
+&"normal_anim": SubResource("Animation_aj1rc")
+}
 
 [node name="do_nothing" type="Node2D" unique_id=73329095]
 script = ExtResource("1_rwidy")
@@ -142,11 +78,12 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureRect" type="TextureRect" parent="Control" unique_id=466495630]
+[node name="Background" type="TextureRect" parent="Control" unique_id=466495630]
 layout_mode = 0
 offset_right = 320.0
 offset_bottom = 180.0
-texture = SubResource("PlaceholderTexture2D_tg3de")
+texture = ExtResource("2_cf3ss")
+stretch_mode = 2
 
 [node name="CornerTimer" parent="Control" unique_id=72580181 instance=ExtResource("3_o814p")]
 unique_name_in_owner = true
@@ -156,11 +93,16 @@ offset_top = 105.0
 offset_right = 45.0
 offset_bottom = 137.0
 
-[node name="Explode" type="AnimatedSprite2D" parent="." unique_id=2102855885]
+[node name="Thoughts" type="TextureRect" parent="Control" unique_id=1758764953]
 unique_name_in_owner = true
-process_mode = 2
-visible = false
-position = Vector2(160, 82)
-sprite_frames = SubResource("SpriteFrames_utmpi")
-frame = 16
-frame_progress = 0.18819648
+layout_mode = 0
+offset_left = 106.0
+offset_top = 6.0
+offset_right = 257.0
+offset_bottom = 100.0
+texture = ExtResource("4_ob8gt")
+stretch_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Thoughts" unique_id=1525493498]
+libraries/ = SubResource("AnimationLibrary_jguox")
+autoplay = &"normal_anim"

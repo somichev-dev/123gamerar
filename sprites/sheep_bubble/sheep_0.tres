@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://cugyajsimiag4"]
+
+[ext_resource type="Texture2D" uid="uid://8vy4heu616fw" path="res://textures/idle_sheep.png" id="1_sdh0t"]
+
+[resource]
+atlas = ExtResource("1_sdh0t")
+region = Rect2(0, 0, 151, 94)

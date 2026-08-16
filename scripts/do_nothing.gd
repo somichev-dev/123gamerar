@@ -5,17 +5,13 @@ extends Node2D
 
 func _ready() -> void:
 	BgAudioPlayer.play_level_music(BgAudioPlayer.MusicType.LEVEL)
-	%Explode.visible = false
-	%Explode.frame = 0
 
 func _input(event): #сом сам разберёшся как это в геймпад превратить
-	if event is InputEventKey and event.pressed:
-		get_tree().paused = true
-		%Explode.visible = true
-		%Explode.play()
-		await %Explode.animation_finished
-		%Explode.visible = false
-		get_tree().paused = false
+	if event.is_action_pressed("key_mash"):
+		%Thoughts/AnimationPlayer.pause()
+		%Thoughts/AnimationPlayer.current_animation = "disrupt_anim"
+		%Thoughts/AnimationPlayer.play()
+		await %Thoughts/AnimationPlayer.animation_finished
 		Lives._lose_life()
 		var has_won = false
 		GamestateStorage.transition_state = GamestateStorage.TransitionScreenState.BAD

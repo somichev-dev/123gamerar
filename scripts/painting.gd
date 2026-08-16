@@ -20,10 +20,7 @@ func _ready() -> void:
 	%painting.self_modulate.a = 0.0
 
 func _input(event):
-	if event is InputEventKey and event.pressed and not event.echo:
-		var pressed_key = event.as_text()
-		if pressed_key not in possible_keys:
-			return
+	if event.is_action_pressed("key_mash"):
 		presses += 1
 		%painting.self_modulate.a = float(presses) / required_presses
 		if presses >= required_presses:

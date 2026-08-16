@@ -145,6 +145,7 @@ stretch_mode = 2
 
 [node name="Fire" type="Control" parent="Control" unique_id=561745969]
 unique_name_in_owner = true
+z_index = 1
 anchors_preset = 0
 offset_left = 170.0
 offset_top = 124.0

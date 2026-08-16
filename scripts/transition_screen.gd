@@ -25,15 +25,19 @@ func _ready() -> void:
 		%HealthContainer.add_child(load(health_scenes[i]).instantiate())
 	state_nodes[GamestateStorage.transition_state].visible = true
 	match GamestateStorage.transition_state:
-		GamestateStorage.TransitionScreenState.SURPRISED, GamestateStorage.TransitionScreenState.GOOD:
+		GamestateStorage.TransitionScreenState.SURPRISED:
+			BgAudioPlayer.play_level_music(BgAudioPlayer.MusicType.START)
+		GamestateStorage.TransitionScreenState.GOOD:
 			BgAudioPlayer.play_level_music(BgAudioPlayer.MusicType.SUCCESS)
 		GamestateStorage.TransitionScreenState.BAD:
 			BgAudioPlayer.play_level_music(BgAudioPlayer.MusicType.FAILURE)
+		GamestateStorage.TransitionScreenState.FASTER:
+			BgAudioPlayer.play_level_music(BgAudioPlayer.MusicType.SPEEDUP)
 
 
 func _on_transition_timer_timeout() -> void:
 	if Lives.lives == 0:
-		BgAudioPlayer.play_level_music(BgAudioPlayer.MusicType.FAILURE)
+		BgAudioPlayer.play_level_music(BgAudioPlayer.MusicType.END)
 		get_tree().change_scene_to_file("res://scenes/end_screen.tscn")
 	else:
 		get_tree().change_scene_to_file(LevelSelector.get_next_level())
