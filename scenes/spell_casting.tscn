@@ -1,6 +1,41 @@
 [gd_scene format=3 uid="uid://d1vjad6uw3u16"]
 
 [ext_resource type="Script" uid="uid://c2juo0i0i83l1" path="res://spell_casting.gd" id="1_hy3is"]
+[ext_resource type="PackedScene" uid="uid://ctf803q3crk38" path="res://scenes/corner_timer.tscn" id="2_7n3ga"]
 
 [node name="spell_casting" type="Node2D" unique_id=465704180]
 script = ExtResource("1_hy3is")
+
+[node name="Control" type="Control" parent="." unique_id=1577324517]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 141.0
+offset_right = 40.0
+offset_bottom = 181.0
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1531031169]
+layout_mode = 0
+offset_top = -141.0
+offset_right = 320.0
+offset_bottom = 39.0
+color = Color(0.59717613, 0.59717613, 0.5971761, 1)
+
+[node name="CornerTimer" parent="Control" unique_id=72580181 instance=ExtResource("2_7n3ga")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -3.4480002
+anchor_right = 7.9170003
+offset_left = 3.0
+offset_top = 101.92001
+offset_right = -232.68002
+offset_bottom = -4.0
+
+[node name="SequenceContainer" type="HBoxContainer" parent="Control" unique_id=182994520]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 66.0
+offset_top = -109.0
+offset_right = 125.0
+offset_bottom = -54.0
+alignment = 1
