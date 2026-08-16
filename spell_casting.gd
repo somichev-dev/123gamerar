@@ -1,8 +1,8 @@
 extends Node2D
 
 @export var timer_amount: float = 5.0
-var possible_keys = ["W", "A", "S", "D"]
 @export var amount = int(5 * GamestateStorage.difficulty_scale)
+var possible_keys = ["W", "A", "S", "D"]
 var sequence = []
 
 var key_textures = {
@@ -16,9 +16,7 @@ var key_textures = {
 
 func _ready() -> void:
 	finished.connect(_minigame_finished)
-	for i in amount:
-		sequence.append(possible_keys.pick_random())
-	print(sequence)
+	for i in amount: sequence.append(possible_keys.pick_random())
 	for key in sequence:
 		var icon = TextureRect.new()
 		icon.texture = key_textures[key]
