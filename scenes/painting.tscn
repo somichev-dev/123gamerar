@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://uocir5qo3vp4"]
+
+[ext_resource type="Script" uid="uid://c8y5aqy24v2tl" path="res://scripts/painting.gd" id="1_maw3x"]
+[ext_resource type="PackedScene" uid="uid://ctf803q3crk38" path="res://scenes/corner_timer.tscn" id="2_ddhaa"]
+
+[node name="painting" type="Node2D" unique_id=1865403894]
+script = ExtResource("1_maw3x")
+
+[node name="Control" type="Control" parent="." unique_id=607757345]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 180.0
+
+[node name="Background" type="TextureRect" parent="Control" unique_id=1365564647]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CornerTimer" parent="Control" unique_id=72580181 instance=ExtResource("2_ddhaa")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 5.0
+offset_top = 104.0
+offset_right = -234.0
+offset_bottom = -4.0
+
+[node name="painting" type="TextureRect" parent="Control" unique_id=1086432305]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 108.0
+offset_top = 26.0
+offset_right = 208.0
+offset_bottom = 145.0
+stretch_mode = 2

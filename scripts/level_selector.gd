@@ -5,6 +5,7 @@ extends Node
 	"res://scenes/games/stick_bonfire.tscn",
 	"res://scenes/games/do_nothing.tscn",
 	"res://scenes/games/spell_casting.tscn",
+	"res://scenes/games/painting.tscn",
 ]
 @onready var _current_levels = []
 
