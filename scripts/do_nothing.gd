@@ -8,6 +8,7 @@ func _ready() -> void:
 
 func _input(event): #сом сам разберёшся как это в геймпад превратить
 	if event.is_action_pressed("key_mash"):
+		if %Thoughts/AnimationPlayer.current_animation == "disrupt_anim": return
 		%Thoughts/AnimationPlayer.pause()
 		%Thoughts/AnimationPlayer.current_animation = "disrupt_anim"
 		%Thoughts/AnimationPlayer.play()
