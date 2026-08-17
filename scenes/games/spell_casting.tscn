@@ -2,6 +2,302 @@
 
 [ext_resource type="Script" uid="uid://c2juo0i0i83l1" path="res://scripts/spell_casting.gd" id="1_hy3is"]
 [ext_resource type="PackedScene" uid="uid://ctf803q3crk38" path="res://scenes/corner_timer.tscn" id="2_7n3ga"]
+[ext_resource type="Texture2D" uid="uid://dvh1xut6mbd5e" path="res://textures/cast_bg.png" id="2_avmo5"]
+[ext_resource type="Texture2D" uid="uid://c4vt6rr8ha2jh" path="res://sprites/arrows/arrow_down_0.tres" id="4_cmro1"]
+[ext_resource type="Texture2D" uid="uid://bv0el4bv64u5u" path="res://sprites/arrows/arrow_down_1.tres" id="5_2pcb5"]
+[ext_resource type="Texture2D" uid="uid://g1pv0e0rit68" path="res://sprites/arrows/arrow_down_2.tres" id="6_mpj4t"]
+[ext_resource type="Texture2D" uid="uid://dovlby7rg34md" path="res://sprites/arrows/arrow_down_3.tres" id="7_f8vn7"]
+[ext_resource type="Texture2D" uid="uid://ckht1s3fxmnto" path="res://sprites/arrows/arrow_down_4.tres" id="8_rmi6k"]
+
+[sub_resource type="Animation" id="Animation_cmro1"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(37, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-39, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_2pcb5"]
+resource_name = "swing"
+length = 1.0666701
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-30, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2, 2),
+"points": PackedFloat32Array(105, 0, 0, 0.13333334, 0, 111, -0.13333334, 0, 0.13333334, 0, 99, -0.13333334, 0, 0.088888906, 0, 105, -0.088888906, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.0666667)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mpj4t"]
+_data = {
+&"RESET": SubResource("Animation_cmro1"),
+&"swing": SubResource("Animation_2pcb5")
+}
+
+[sub_resource type="Animation" id="Animation_mpj4t"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(94, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(64, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_f8vn7"]
+resource_name = "swing"
+length = 1.0666701
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(64, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(68, 0, 0, 0.13333334, 0, 74, -0.13333334, 0, 0.13333334, 0, 62, -0.13333334, 0, 0.088888906, 0, 68, -0.088888906, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.0666667)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rmi6k"]
+_data = {
+&"RESET": SubResource("Animation_mpj4t"),
+&"swing": SubResource("Animation_f8vn7")
+}
+
+[sub_resource type="Animation" id="Animation_rmi6k"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(155, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(55, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_guvvh"]
+resource_name = "swing"
+length = 1.0666700556311757
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(107, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(50, 0, 0, 0.13333334, 0, 56, -0.13333334, 0, 0.13333334, 0, 44, -0.13333334, 0, 0.088888906, 0, 50, -0.088888906, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.0666667)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8py8d"]
+_data = {
+&"RESET": SubResource("Animation_rmi6k"),
+&"swing": SubResource("Animation_guvvh")
+}
+
+[sub_resource type="Animation" id="Animation_8py8d"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(225, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(64, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_gkx82"]
+resource_name = "swing"
+length = 1.0666700556311757
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(225, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(67, 0, 0, 0.13333334, 0, 73, -0.13333334, 0, 0.13333334, 0, 61, -0.13333334, 0, 0.088888906, 0, 67, -0.088888906, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.0666667)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qdj7d"]
+_data = {
+&"RESET": SubResource("Animation_8py8d"),
+&"swing": SubResource("Animation_gkx82")
+}
+
+[sub_resource type="Animation" id="Animation_qdj7d"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(283, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(98, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_guy6x"]
+resource_name = "swing"
+length = 1.0666700556311757
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(283, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(98, 0, 0, 0.13333334, 0, 104, -0.13333334, 0, 0.13333334, 0, 92, -0.13333334, 0, 0.088888906, 0, 98, -0.088888906, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.0666667)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nbqsh"]
+_data = {
+&"RESET": SubResource("Animation_qdj7d"),
+&"swing": SubResource("Animation_guy6x")
+}
 
 [node name="spell_casting" type="Node2D" unique_id=465704180]
 script = ExtResource("1_hy3is")
@@ -9,16 +305,12 @@ script = ExtResource("1_hy3is")
 [node name="Control" type="Control" parent="." unique_id=1577324517]
 layout_mode = 3
 anchors_preset = 0
-offset_top = 141.0
-offset_right = 40.0
-offset_bottom = 181.0
 
-[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1531031169]
+[node name="Background" type="TextureRect" parent="Control" unique_id=598313403]
 layout_mode = 0
-offset_top = -141.0
 offset_right = 320.0
-offset_bottom = 39.0
-color = Color(0.59717613, 0.59717613, 0.5971761, 1)
+offset_bottom = 180.0
+texture = ExtResource("2_avmo5")
 
 [node name="CornerTimer" parent="Control" unique_id=72580181 instance=ExtResource("2_7n3ga")]
 unique_name_in_owner = true
@@ -26,16 +318,173 @@ layout_mode = 1
 anchors_preset = -1
 anchor_top = -3.4480002
 anchor_right = 7.9170003
-offset_left = 3.0
-offset_top = 101.92001
-offset_right = -232.68002
-offset_bottom = -4.0
+offset_left = 166.0
+offset_top = 119.0
+offset_right = 166.0
+offset_bottom = 119.0
 
-[node name="SequenceContainer" type="HBoxContainer" parent="Control" unique_id=182994520]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 66.0
-offset_top = -109.0
-offset_right = 125.0
-offset_bottom = -54.0
-alignment = 1
+[node name="Sequence0" type="Control" parent="Control" unique_id=351248271]
+anchors_preset = 0
+offset_left = 37.0
+offset_top = -39.0
+offset_right = 37.0
+offset_bottom = -39.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/Sequence0" unique_id=1872269818]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_cmro1")
+stretch_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Sequence0" unique_id=983452514]
+libraries/ = SubResource("AnimationLibrary_mpj4t")
+autoplay = &"swing"
+
+[node name="Timer" type="Timer" parent="Control/Sequence0" unique_id=1624662353]
+wait_time = 0.05
+one_shot = true
+autostart = true
+
+[node name="Sequence1" type="Control" parent="Control" unique_id=1629901161]
+anchors_preset = 0
+offset_left = 94.0
+offset_top = 64.0
+offset_right = 94.0
+offset_bottom = 64.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/Sequence1" unique_id=166281166]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_2pcb5")
+stretch_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Sequence1" unique_id=1130550412]
+libraries/ = SubResource("AnimationLibrary_rmi6k")
+autoplay = &"swing"
+
+[node name="Timer" type="Timer" parent="Control/Sequence1" unique_id=172988601]
+wait_time = 0.15
+one_shot = true
+autostart = true
+
+[node name="Sequence2" type="Control" parent="Control" unique_id=2014874805]
+anchors_preset = 0
+offset_left = 155.0
+offset_top = 55.0
+offset_right = 155.0
+offset_bottom = 55.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/Sequence2" unique_id=1415317085]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_mpj4t")
+stretch_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Sequence2" unique_id=1564182395]
+libraries/ = SubResource("AnimationLibrary_8py8d")
+autoplay = &"swing"
+
+[node name="Timer" type="Timer" parent="Control/Sequence2" unique_id=1611887647]
+wait_time = 0.25
+one_shot = true
+autostart = true
+
+[node name="Sequence3" type="Control" parent="Control" unique_id=985022039]
+anchors_preset = 0
+offset_left = 225.0
+offset_top = 64.0
+offset_right = 225.0
+offset_bottom = 64.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/Sequence3" unique_id=481488475]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_f8vn7")
+stretch_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Sequence3" unique_id=807694325]
+libraries/ = SubResource("AnimationLibrary_qdj7d")
+autoplay = &"swing"
+
+[node name="Timer" type="Timer" parent="Control/Sequence3" unique_id=37321446]
+wait_time = 0.35
+one_shot = true
+autostart = true
+
+[node name="Sequence4" type="Control" parent="Control" unique_id=1142187837]
+anchors_preset = 0
+offset_left = 283.0
+offset_top = 98.0
+offset_right = 283.0
+offset_bottom = 98.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/Sequence4" unique_id=1013854144]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_rmi6k")
+stretch_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Sequence4" unique_id=661545933]
+libraries/ = SubResource("AnimationLibrary_nbqsh")
+autoplay = &"swing"
+
+[node name="Timer" type="Timer" parent="Control/Sequence4" unique_id=998638176]
+wait_time = 0.45
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Control/Sequence0/Timer" to="." method="_on_timer0_timeout"]
+[connection signal="timeout" from="Control/Sequence1/Timer" to="." method="_on_timer1_timeout"]
+[connection signal="timeout" from="Control/Sequence2/Timer" to="." method="_on_timer2_timeout"]
+[connection signal="timeout" from="Control/Sequence3/Timer" to="." method="_on_timer3_timeout"]
+[connection signal="timeout" from="Control/Sequence4/Timer" to="." method="_on_timer4_timeout"]

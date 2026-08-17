@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpc2q3owxteyl"
-path="res://.godot/imported/pngtree-round-rock-png-image_8208690-2187294227.png-fbe1932b848572b497d4cf1a6072a51d.ctex"
+uid="uid://dvh1xut6mbd5e"
+path="res://.godot/imported/cast_bg.png-43ffa175ee19032119f85de7d8bb9d3d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/pngtree-round-rock-png-image_8208690-2187294227.png"
-dest_files=["res://.godot/imported/pngtree-round-rock-png-image_8208690-2187294227.png-fbe1932b848572b497d4cf1a6072a51d.ctex"]
+source_file="res://textures/cast_bg.png"
+dest_files=["res://.godot/imported/cast_bg.png-43ffa175ee19032119f85de7d8bb9d3d.ctex"]
 
 [params]
 

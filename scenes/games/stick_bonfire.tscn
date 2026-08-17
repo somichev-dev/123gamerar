@@ -1,19 +1,31 @@
 [gd_scene format=3 uid="uid://c714ukjmulff3"]
 
 [ext_resource type="Script" uid="uid://cbg7y7ry5j3n8" path="res://scripts/stick_bonfire.gd" id="1_lg7o3"]
+[ext_resource type="Texture2D" uid="uid://du4n1txl73y1o" path="res://textures/bobby_bg.png" id="2_82qbm"]
 [ext_resource type="Texture2D" uid="uid://bqq1it0avnyab" path="res://sprites/keys/key_hint_a.tres" id="2_kfwu0"]
 [ext_resource type="Texture2D" uid="uid://pfy0cxt7pnb8" path="res://sprites/keys/key_hint_d.tres" id="3_dd6e0"]
 [ext_resource type="PackedScene" uid="uid://ctf803q3crk38" path="res://scenes/corner_timer.tscn" id="4_dd6e0"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_vwr0o"]
-font_color = Color(0.69803923, 0.05882353, 0.05882353, 1)
+[ext_resource type="Texture2D" uid="uid://bb2xjjxt3l0v0" path="res://sprites/bobby/bobby_brush.tres" id="6_cp517"]
+[ext_resource type="Texture2D" uid="uid://csld2mchuc503" path="res://sprites/bobby/bobby_2.tres" id="6_lpemd"]
+[ext_resource type="Texture2D" uid="uid://dqsdco625w0o4" path="res://sprites/bobby/bobby_bathroom.tres" id="7_5svio"]
+[ext_resource type="Texture2D" uid="uid://bhuab8bdhdjia" path="res://sprites/bobby/bobby_dirt_0.tres" id="9_xvvks"]
+[ext_resource type="Texture2D" uid="uid://bfeo27s4fcy45" path="res://sprites/bobby/bobby_dirt_1.tres" id="10_imxlm"]
+[ext_resource type="Texture2D" uid="uid://cffplxbfo65uf" path="res://sprites/bobby/bobby_dirt_2.tres" id="11_83b4g"]
+[ext_resource type="Texture2D" uid="uid://dwiaaj3h4kiyo" path="res://sprites/bobby/bobby_dirt_3.tres" id="12_301s0"]
+[ext_resource type="Texture2D" uid="uid://clkddgbgfidxx" path="res://sprites/bobby/bobby_dirt_5.tres" id="13_icw2u"]
+[ext_resource type="Texture2D" uid="uid://cl58jmfovka6" path="res://sprites/bobby/bobby_dirt_4.tres" id="14_qtykn"]
+[ext_resource type="Texture2D" uid="uid://b76qqrs2jrps3" path="res://sprites/bobby/bobby_clean.tres" id="15_xvvks"]
 
 [node name="StickBonfire" type="Node2D" unique_id=54306289]
 oversampling_with_scale = 1
 script = ExtResource("1_lg7o3")
+anim_points = [Vector2(234, 114), Vector2(150, 114)]
+decay_rate = 0.0
+win_threshold = 0.95
 
 [node name="Control" type="Control" parent="." unique_id=1767759794]
 oversampling_with_scale = 1
+z_index = 1
 custom_minimum_size = Vector2(320, 180)
 layout_mode = 3
 anchors_preset = 15
@@ -24,52 +36,51 @@ offset_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="Control" unique_id=353988175]
+[node name="Background" type="TextureRect" parent="Control" unique_id=879431568]
+z_index = -1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.59717613, 0.59717613, 0.5971761, 1)
+texture = ExtResource("2_82qbm")
+stretch_mode = 2
 
-[node name="ColorRect2" type="ColorRect" parent="Control" unique_id=895748632]
-layout_mode = 0
-offset_left = 140.0
-offset_top = 83.0
-offset_right = 180.0
-offset_bottom = 123.0
-
-[node name="Label" type="Label" parent="Control/ColorRect2" unique_id=1083234052]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "1"
-label_settings = SubResource("LabelSettings_vwr0o")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureRectLeft" type="TextureRect" parent="Control" unique_id=2001743504]
+[node name="ButtonHintLeft" type="TextureRect" parent="Control" unique_id=2001743504]
+unique_name_in_owner = true
 oversampling_with_scale = 1
 texture_filter = 3
-layout_mode = 0
-offset_left = 109.0
-offset_top = 130.0
-offset_right = 142.0
-offset_bottom = 164.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -57.0
+offset_top = -45.0
+offset_right = -24.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 0
 texture = ExtResource("2_kfwu0")
 stretch_mode = 2
 
-[node name="TextureRectRight" type="TextureRect" parent="Control" unique_id=1352052901]
+[node name="ButtonHintRight" type="TextureRect" parent="Control" unique_id=1352052901]
+unique_name_in_owner = true
 oversampling_with_scale = 1
-layout_mode = 0
-offset_left = 169.0
-offset_top = 130.0
-offset_right = 202.0
-offset_bottom = 164.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -45.0
+offset_right = 57.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 0
 texture = ExtResource("3_dd6e0")
 stretch_mode = 2
 
@@ -80,3 +91,53 @@ offset_left = 2.0
 offset_top = 106.0
 offset_right = -237.0
 offset_bottom = -2.0
+
+[node name="Bobby" type="Sprite2D" parent="." unique_id=1147928259]
+unique_name_in_owner = true
+position = Vector2(162, 95)
+texture = ExtResource("6_lpemd")
+
+[node name="BobbyBathroom" type="Sprite2D" parent="." unique_id=1341983999]
+position = Vector2(160, 141)
+texture = ExtResource("7_5svio")
+
+[node name="BobbyDirt0" type="Sprite2D" parent="." unique_id=1532482459]
+unique_name_in_owner = true
+position = Vector2(188, 131)
+texture = ExtResource("9_xvvks")
+
+[node name="BobbyDirt1" type="Sprite2D" parent="." unique_id=1059685924]
+unique_name_in_owner = true
+position = Vector2(161, 131)
+texture = ExtResource("10_imxlm")
+
+[node name="BobbyDirt2" type="Sprite2D" parent="." unique_id=564147785]
+unique_name_in_owner = true
+position = Vector2(128, 126)
+texture = ExtResource("11_83b4g")
+
+[node name="BobbyDirt3" type="Sprite2D" parent="." unique_id=745859270]
+unique_name_in_owner = true
+position = Vector2(138, 100)
+texture = ExtResource("12_301s0")
+
+[node name="BobbyDirt4" type="Sprite2D" parent="." unique_id=1942057051]
+unique_name_in_owner = true
+position = Vector2(187, 105)
+texture = ExtResource("14_qtykn")
+
+[node name="BobbyDirt5" type="Sprite2D" parent="." unique_id=820636155]
+unique_name_in_owner = true
+position = Vector2(157, 95)
+texture = ExtResource("13_icw2u")
+
+[node name="BobbyBrush" type="Sprite2D" parent="." unique_id=1304506508]
+unique_name_in_owner = true
+position = Vector2(234, 114)
+texture = ExtResource("6_cp517")
+
+[node name="BobbyClean" type="Sprite2D" parent="." unique_id=1817584217]
+unique_name_in_owner = true
+visible = false
+position = Vector2(207, 98)
+texture = ExtResource("15_xvvks")

@@ -191,6 +191,7 @@ stretch_mode = 3
 
 [node name="RockUpper" type="TextureRect" parent="Control" unique_id=1240938418]
 unique_name_in_owner = true
+z_index = 1
 layout_mode = 0
 offset_left = 52.0
 offset_top = 18.0
